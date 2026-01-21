@@ -4,7 +4,7 @@
 
 **Assignment Type:** Mobile application analysis 
 
-**Group Members:** [Rebecca Alinda., Anna Akumu.,Wakabi Precious Namaganda., Odongkara Oscar., Joseph Mukama] 
+**Group Members:** [Rebecca Alinda., Anna Akumu., Namaganda Wakabi Precious., Odongkara Oscar., Joseph Mukama] 
 
 **Selected App:** Spotify  
 
