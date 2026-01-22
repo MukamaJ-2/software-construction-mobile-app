@@ -13,7 +13,8 @@ This README contains our group's complete submission for Assignment 1. We analyz
 ## 1. App Overview
 
 **What problem does this app solve?**  
-
+1. Relation to Copyright, spotify provides legal, licensed access to music, reducing illegal copying. Artists and record labels are paid for streams, which protects copyright ownership. By making music easy and affordable to access, Spotify helps prevent copyright infringement.
+2. Centralizing Music Genres, before Spotify, music was spread across platforms like HowBizz for local Ugandan music, Tubidy for international pop and hip-hop, and Boomplay for African genres. Spotify brought all these genres into one platform, making music easier to find and enjoy in one place.
 **Who are its primary users?**  
 1.
 
