@@ -23,7 +23,7 @@ This README contains our group's complete submission for Assignment 1. We analyz
 List 5–7 key features of Spotify (based on current app experience):
 1.** The login and registration **
 2. **The search button:** There is no way to get access to most of the stored playlists and albums
-3.  
+3. ** Offline Downloads:** Permits saving content for offline use, emphasizing data storage strategies for reliability.
 4.  
 5.  
 6. 
