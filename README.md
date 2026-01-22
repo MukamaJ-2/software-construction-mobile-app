@@ -41,7 +41,8 @@ For **each** of the features listed above, discuss:
   - Network / APIs  
   - Data storage  
 
-- Whether the feature requires internet connectivity  
+- Whether the feature requires internet connectivity
+- 1. It rquires for live streaming
 - What might happen if the network is slow or unavailable
 - 1. You will only be able to access the downloaded content
   2. some features like the colloborative creation of playlists and messaging services wo't be available
