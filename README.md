@@ -44,7 +44,7 @@ For **each** of the features listed above, discuss:
 - Whether the feature requires internet connectivity  
 - What might happen if the network is slow or unavailable
 - 1. You will only be able to access the downloaded content
-  2. 
+  2. some features like the colloborative creation of playlists and messaging services wo't be available
 
 **Feature 1: [e.g., Personalized playlists and recommendations]**  
 - Components:  
@@ -81,7 +81,6 @@ Identify **at least 5** engineering challenges in maintaining/improving Spotify.
    [Brief explanation... e.g., Handling millions of concurrent streams and personalized recommendations requires massive backend scaling without latency.]
 
 2. **Security and data privacy**  
-   [Brief... e.g., Protecting user listening data, preventing unauthorized access, complying with global privacy laws like GDPR.]
    1. one time login that kepps you logged in and this maybe insecure.
    2. 
 
