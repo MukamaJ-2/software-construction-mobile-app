@@ -4,7 +4,7 @@
 
 **Assignment Type:** Mobile application analysis 
 
-**Group Members:** [Rebecca Alinda., Anna Akumu., Namaganda Wakabi Precious., Odongkara Oscar., Joseph Mukama] 
+**Group Members:** Rebecca Alinda., Anna Akumu., Namaganda Wakabi Precious., Odongkara Oscar., Joseph Mukama
 
 **Selected App:** Spotify  
 
@@ -16,8 +16,10 @@ This README contains our group's complete submission for Assignment 1. We analyz
 1. Relation to Copyright, spotify provides legal, licensed access to music, reducing illegal copying. Artists and record labels are paid for streams, which protects copyright ownership. By making music easy and affordable to access, Spotify helps prevent copyright infringement.
 2. Centralizing Music Genres, before Spotify, music was spread across platforms like HowBizz for local Ugandan music, Tubidy for international pop and hip-hop, and Boomplay for African genres. Spotify brought all these genres into one platform, making music easier to find and enjoy in one place.
 3. 
-**Who are its primary users?**  
-1.
+**Who are its primary users?
+1. Music enthusiasts within a specific age range(most preferably youth).
+2. Music artists and producers looking to sell their music.
+
 
 ## 2. Core Features
 
@@ -31,7 +33,6 @@ List 5–7 key features of Spotify (based on current app experience):
 6. Creation and management of playlists: Create, edit, share, and collaborate on playlists; add/remove tracks.
 7.   
 
-[Discuss briefly why these are core if needed.]
 
 ## Part B: Thinking Behind the Scenes
 
@@ -78,11 +79,27 @@ For each of the features listed above, discuss:
       Verification may fail
       User cannot access their account
 
-**Feature 2: **
+Feature 2: The search button   
+- Likely software components involved:  
+  - User Interface (UI): 
+  - Business logic: 
+  - Network / APIs: 
+  - Data storage: 
 
-Feature 3:  
+- Does it require Internet?
+- If Network Slow/Unavailable: 
 
-Feature 4:  
+Feature 3: Offline Downloads
+- Likely software components involved:  
+  - User Interface (UI): 
+  - Business logic: 
+  - Network / APIs: 
+  - Data storage: 
+
+- Does it require Internet?
+- If Network Slow/Unavailable: 
+
+Feature 4: Lyrics Display(Real-Time Synced) 
 
 Feature 5: Personalized Recommendations.
  - Likely software components involved:
@@ -95,9 +112,24 @@ Does it require Internet? Yes, for updating recommendations.
 If Network Slow/Unavailable: Stale recommendations from last sync; new listens aren't factored in until reconnected, potentially reducing personalization accuracy.
 
 Feature 6: Creation and management of playlists
+- Likely software components involved:  
+  - User Interface (UI): 
+  - Business logic: 
+  - Network / APIs: 
+  - Data storage: 
+
+- Does it require Internet?
+- If Network Slow/Unavailable: 
 
 Feature 7: 
+- Likely software components involved:  
+  - User Interface (UI): 
+  - Business logic: 
+  - Network / APIs: 
+  - Data storage: 
 
+- Does it require Internet?
+- If Network Slow/Unavailable: 
 
 
 
