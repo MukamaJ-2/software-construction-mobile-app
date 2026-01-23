@@ -143,7 +143,7 @@ Feature 7:
 
 **What existing features could break?**  
 1.Lyrics sync might fail on slower processors due to timing demands.
-2.
+2.Playback might stutter if buffering isn't optimized for low RAM.
 
 **Why would this change be difficult to implement?**  
 1. Because the system is already deployed.
