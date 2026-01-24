@@ -81,25 +81,59 @@ For each of the features listed above, discuss:
 
 Feature 2: The search button   
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
+  - User Interface (UI):
+       Search icon (magnifying glass), Search screen with a text input field, Categories and suggestions (songs, artists, albums, playlists), Results list that updates as the user types.
+  - Business logic:
+       Interprets what the user types
+       Decides how to rank results (songs first, artists, playlists)
+       Filters and matches search terms with Spotify’s catalog
+  - Network / APIs:
+        Sends the search query to Spotify servers
+        Receives matching results (songs, artists, albums, playlists)
   - Data storage: 
-
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+        Temporary caching of recent searches
+        Search history saved to improve recommendations
+  - Does it require Internet?
+         Yes.
+  - If Network Slow/Unavailable:
+         Search results load slowly or not at all
+         Only previously cached results (if any) may appear
+         User cannot discover new music
 
 Feature 3: Offline Downloads
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
-
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+  - User Interface (UI):
+      Download button on songs, albums, or playlists
+      Download progress indicator
+      Offline library screen to access downloaded content
+  - Business logic:
+       Checks if the user has permission (Premium subscription)
+       Manages what gets downloaded and storage space
+       Handles play requests from offline content
+  - Network / APIs:
+       Downloads music from Spotify servers when connected
+       Updates download status and syncs playlists with the cloud
+  - Data storage:
+       Stores music files securely on the device
+       Saves metadata (song info, playlists, progress) locally
+  - Does it require Internet?
+       Yes to download new songs
+       No to play songs already downloaded
+  - If Network Slow/Unavailable:
+       New downloads may fail or pause
+       Only already-downloaded songs are playable
+       Features like streaming, search, or updating playlists are limited
 
 Feature 4: Lyrics Display(Real-Time Synced) 
+- UI: Lyrics appear line by line as the song plays, often highlighted in sync with music; scrollable lyric view for longer songs.
+- Business Logic: Matches song playback position to the correct lyric line; handles timing, scrolling, and any user interactions like pause or seek.
+- Network/APIs: Retrieves lyrics from Spotify’s servers or licensed lyric providers; may update lyrics in real time for new songs.
+- Data Storage: Caches recently viewed lyrics locally for faster access; stores timing data and song-lyrics mapping for offline playback.
+- Does it require internet?
+    Yes, for new songs or lyrics not yet cached; no for already downloaded songs with cached lyrics.
+- If network is slow/unavailable:
+    Lyrics for new songs may not appear
+    Existing cached lyrics will display, but real-time sync may lag
 
 Feature 5: Personalized Recommendations.
  - Likely software components involved:
@@ -113,14 +147,16 @@ Feature 5: Personalized Recommendations.
 
 Feature 6: Creation and management of playlists
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
-
-- Does it require Internet?
-- If Network Slow/Unavailable: 
-
+    - User Interface (UI): Screens to create, name, edit, and delete playlists; drag-and-drop or add/remove tracks; share and collaborative playlist options.
+    - Business Logic: Handles playlist creation, editing, and deletion; manages permissions for collaborative playlists; enforces limits (number of songs, playlist size).
+    - Network / APIs: Syncs playlist changes to Spotify servers; fetches updates from shared/collaborative playlists; communicates with friends’ accounts for collaboration.
+    - Data Storage: Stores playlist structure locally for offline access; syncs metadata (song order, collaborators, playlist info) with cloud storage.
+    - Does it require Internet? Yes for creating, sharing, and collaborating on playlists.
+         Partly for accessing already downloaded songs in a playlist offline.
+    - If Network Slow/Unavailable:
+         Cannot create or share new playlists
+         Collaborative playlists won’t update in real time
+         User can still play downloaded songs in existing playlists, but any changes won’t sync until reconnected
 Feature 7: 
 - Likely software components involved:  
   - User Interface (UI): 
@@ -142,7 +178,7 @@ Feature 7:
 1.
 
 **What existing features could break?**  
-1.Lyrics sync might fail on slower processors due to timing demands.
+1.Lyrics sync might fail on slower processors due to timing demands                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .
 2.Playback might stutter if buffering isn't optimized for low RAM.
 
 **Why would this change be difficult to implement?**  
