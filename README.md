@@ -175,7 +175,7 @@ If Network Slow or Unavailable: Login fails, pages may not load, user cannot acc
 
 ## Part C: Change and Maintainability
 
-**Chosen change scenario:** [Pick ONE, e.g., Optimize the app for low-end smartphone            ]  
+**Chosen change scenario:**
 (Other options: Add offline support, Support 10× more users, Introduce dark mode across the app, Add mobile payments in Uganda)
 
 **Which parts of the app would need changes?**  
@@ -248,8 +248,9 @@ Identify **at least 5** engineering challenges in maintaining/improving Spotify.
    2. 
 
 3. **Why is writing “working code” not enough for software systems at this scale?**  
-   1. 
-   2. 
+   1. Millions of users expect near-zero downtime, fast responses, and consistent experience; small bugs or inefficiencies can affect huge numbers of people, damage reputation, or lose revenue.
+   2. At Spotify's massive scale, code must be fast, secure, easy to maintain and test, and resilient to network issues, device differences, and traffic spikes simply working on one phone
+doesn't guarantee it will perform reliably for millions of users worldwide.
 
 5. **What did you learn about teamwork from this exercise?**  
    1. Easier to tackle about a number ideas
