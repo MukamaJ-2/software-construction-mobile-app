@@ -31,6 +31,10 @@ List 5–7 key features of Spotify (based on current app experience):
 1. User authentication and Profile System/The login or signup page: There are multiple options like Email, Google, Facebook and Apple. There is also profile managemet, and account settings where users can manage their subscription tier (Free, Premium, Family, Student plans).
 2. The search functionality: A powerful search bar that lets you find songs, artists, albums, playlists, podcasts, and audiobooks. It includes filters and a search history to quickly access previous queries.
 3. Offline Downloads: Permits saving content for offline use, emphasizing data storage strategies for reliability.
+4. Lyrics Display(Real-Time Synced): Shows timed lyrics during playback, a feature that ties UI with timing algorithms.
+5. Personalized Recommendations: Made for You sections like Daily Mixes, Discover Weekly, and Release Radar based on listening history.
+6. Creation and management of playlists: Create, edit, share, and collaborate on playlists; add/remove tracks.
+7. Streaming Playback & Controls 
 4. Music Player Controls: Full-featured playback interface with play/pause, skip, shuffle, repeat, volume control, queue management, lyrics display, and casting to other devices (Spotify Connect) as well the share button.
 5. Personalized Home Feed: Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
 6. Playlist Creation & Management: Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
@@ -39,20 +43,6 @@ List 5–7 key features of Spotify (based on current app experience):
 
 
 ## Part B: Thinking Behind the Scenes
-
-For each of the features listed above, discuss:
-
-- Likely software components involved:  
-  - User Interface (UI)  
-  - Business logic  
-  - Network / APIs  
-  - Data storage  
-
-- Whether the feature requires internet connectivity
-- 1. It rquires for live streaming
-- What might happen if the network is slow or unavailable
-- 1. You will only be able to access the downloaded content
-  2. some features like the colloborative creation of playlists and messaging services wo't be available
 
 **Feature 1: User authentication/The login and registration.**
  - Likely software components involved:
@@ -98,20 +88,28 @@ Feature 2: The search functionality
   - Network / APIs: 
   - Data storage: 
 
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+- Does it require Internet? Yes (for full results and suggestions).
+- If Network Slow/Unavailable: Results load slowly or fail to appear; app falls back to cached searches or shows “No internet connection” message. Local library search may still work partially.
 
 Feature 3: Offline Downloads
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
+  - User Interface (UI): Download toggle buttons on songs/albums/playlists, progress indicators, “Downloads” section in Your Library.
+  - Business logic: Manages download queue, handles DRM encryption/decryption, checks download expiration, prioritizes based on user preferences. 
+  - Network / APIs: Initial API calls to authorize and fetch content from Spotify’s content delivery network (CDN). 
+  - Data storage: Encrypted audio files stored in app’s secure local storage (device file system).
 
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+- Does it require Internet? Yes to download; No to play downloaded content.
+- If Network Slow/Unavailable: Downloads pause or fail; already downloaded content remains playable without issues.
 
 Feature 4: Lyrics Display(Real-Time Synced) 
+- Likely software components involved:  
+  - User Interface (UI): Scrollable lyrics panel below the player, current line highlighted and auto-scrolling, “Lyrics not available” fallback.
+  - Business logic: Syncs lyrics timestamps with current playback position, handles language selection, karaoke-style highlighting.
+  - Network / APIs: Fetches timed lyrics data from Spotify’s lyrics service or third-party partners (e.g., Musixmatch).
+  - Data storage: Temporary cache of recently viewed lyrics on device.
+
+- Does it require Internet? Yes for initial fetch; cached lyrics may work offline.
+- If Network Slow/Unavailable: Lyrics fail to load or appear delayed/out-of-sync; app shows “Lyrics unavailable” or static text.
 
 Feature 5: Personalized Recommendations.
  - Likely software components involved:
@@ -125,23 +123,23 @@ Feature 5: Personalized Recommendations.
 
 Feature 6: Creation and management of playlists
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
+  - User Interface (UI): Playlist creation screen, “Add songs” search, drag-and-drop reordering, collaborative indicators and share button
+  - Business logic: Adds/removes tracks, handles reordering, manages collaborative editing conflicts, updates metadata.
+  - Network / APIs: Syncs changes to Spotify servers, uses real-time collaboration APIs (WebSockets/polling) for shared playlists.
+  - Data storage: Local temporary storage for unsynced changes; master data on Spotify cloud servers.
 
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+- Does it require Internet? Partial (local edits possible); full sync and collaboration require internet.
+- If Network Slow/Unavailable: Changes saved locally but not synced; collaborative edits by others won’t appear; potential merge conflicts on reconnect.
 
-Feature 7: 
+Feature 7: Streaming Playback & Controls
 - Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
+  - User Interface (UI): Now Playing screen with large album art, progress bar, play/pause, skip, shuffle, repeat, queue button, and lyrics toggle.
+  - Business logic: Manages audio buffering, adaptive bitrate switching (based on network speed), handles playback interruptions (calls, notifications), queue logic.
+  - Network / APIs: Streams audio chunks from Spotify’s CDN using adaptive streaming protocols (HLS/DASH), fetches metadata updates.
+  - Data storage: Temporary in-memory buffer and small local cache for preloading.
 
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+- Does it require Internet? Yes for streaming (unless content is downloaded).
+- If Network Slow/Unavailable: Buffering occurs frequently, audio quality drops automatically, playback pauses or stops. Downloaded songs continue playing.
 
 
 
