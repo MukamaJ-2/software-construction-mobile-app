@@ -33,13 +33,11 @@ List 5–7 key features of Spotify (based on current app experience):
 3. Offline Downloads: Permits saving content for offline use, emphasizing data storage strategies for reliability.
 4. Lyrics Display(Real-Time Synced): Shows timed lyrics during playback, a feature that ties UI with timing algorithms.
 5. Personalized Recommendations: Made for You sections like Daily Mixes, Discover Weekly, and Release Radar based on listening history.
-6. Creation and management of playlists: Create, edit, share, and collaborate on playlists; add/remove tracks.
-7. Streaming Playback & Controls 
-4. Music Player Controls: Full-featured playback interface with play/pause, skip, shuffle, repeat, volume control, queue management, lyrics display, and casting to other devices (Spotify Connect) as well the share button.
-5. Personalized Home Feed: Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
-6. Playlist Creation & Management: Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
-7. Payment & Subscription Management: In -app payment gateway for upgrading to Premium, managing billing information, changing subscription plans, and accessing payment history. Multiple payment methods supported (Credit card, mobile carrier billing)
-8. Library & Collection Organisation: "Your Library" section where you can organise saved songs, albums, artists, podcasts, and audiobooks into folders and custom categories for easy access and management 
+6. Streaming Playback & Controls — Full player interface with play/pause, skip, shuffle, repeat, volume, queue management, lyrics toggle, casting (Spotify Connect), and share options.
+7. Personalized Home Feed: Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
+8. Playlist Creation & Management: Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
+9. Payment & Subscription Management: In -app payment gateway for upgrading to Premium, managing billing information, changing subscription plans, and accessing payment history. Multiple payment methods supported (Credit card, mobile carrier billing)
+10. Library & Collection Organisation: "Your Library" section where you can organise saved songs, albums, artists, podcasts, and audiobooks into folders and custom categories for easy access and management 
 
 
 ## Part B: Thinking Behind the Scenes
