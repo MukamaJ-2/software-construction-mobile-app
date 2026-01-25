@@ -28,48 +28,29 @@ Basically, Spotify democratised music access while solving the friction between 
 
 List 5–7 key features of Spotify (based on current app experience):
 
-1. User authentication and Profile System/The login or signup page: There are multiple options like Email, Google, Facebook and Apple. There is also profile managemet, and account settings where users can manage their subscription tier (Free, Premium, Family, Student plans).
-2. The search functionality: A powerful search bar that lets you find songs, artists, albums, playlists, podcasts, and audiobooks. It includes filters and a search history to quickly access previous queries.
-3. Offline Downloads: Permits saving content for offline use, emphasizing data storage strategies for reliability.
-4. Lyrics Display(Real-Time Synced): Shows timed lyrics during playback, a feature that ties UI with timing algorithms.
-5. Personalized Recommendations: Made for You sections like Daily Mixes, Discover Weekly, and Release Radar based on listening history.
-6. Streaming Playback & Controls — Full player interface with play/pause, skip, shuffle, repeat, volume, queue management, lyrics toggle, casting (Spotify Connect), and share options.
-7. Personalized Home Feed: Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
-8. Playlist Creation & Management: Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
-9. Payment & Subscription Management: In -app payment gateway for upgrading to Premium, managing billing information, changing subscription plans, and accessing payment history. Multiple payment methods supported (Credit card, mobile carrier billing)
-10. Library & Collection Organisation: "Your Library" section where you can organise saved songs, albums, artists, podcasts, and audiobooks into folders and custom categories for easy access and management 
+1. **User authentication and Profile System/The login or signup page:** There are multiple options like Email, Google, Facebook and Apple. There is also profile managemet, and account settings where users can manage their subscription tier (Free, Premium, Family, Student plans).
+2. **The search functionality: **A powerful search bar that lets you find songs, artists, albums, playlists, podcasts, and audiobooks. It includes filters and a search history to quickly access previous queries.
+3. **Offline Downloads:** Permits saving content for offline use, emphasizing data storage strategies for reliability.
+4. **Lyrics Display(Real-Time Synced): **Shows timed lyrics during playback, a feature that ties UI with timing algorithms.
+5. **Personalized Recommendations: **Made for You sections like Daily Mixes, Discover Weekly, and Release Radar based on listening history.
+6. **Streaming Playback & Controls:** Full player interface with play/pause, skip, shuffle, repeat, volume, queue management, lyrics toggle, casting (Spotify Connect), and share options.
+7. **Personalized Home Feed:** Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
+8. **Playlist Creation & Management:** Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
+9. **Payment & Subscription Management:** In -app payment gateway for upgrading to Premium, managing billing information, changing subscription plans, and accessing payment history. Multiple payment methods supported (Credit card, mobile carrier billing)
+10. **Library & Collection Organisation:** "Your Library" section where you can organise saved songs, albums, artists, podcasts, and audiobooks into folders and custom categories for easy access and management 
 
 
 ## Part B: Thinking Behind the Scenes
 
 **Feature 1: User authentication/The login and registration.**
  - Likely software components involved:
- - User Interface (UI)
-     Login screen with options:
-        Continue with email
-        Continue with phone number
-        Continue with Google
-     If email is selected → user is taken to an email and password screen
-     If phone number is selected → user is taken to a screen to enter phone number
-     If Google is selected → user is shown a list of Google accounts to choose from
-     This shows how the app guides the user step-by-step.
-  - Business Logic
-      Determines which login option the user selected
-      Validates email/password or phone number
-      Handles Google authentication flow
-      Creates a secure user session after successful login
-  - Network / APIs
-      Communicates with Spotify authentication servers
-      Uses Google authentication APIs for “Continue with Google”
-      Sends and verifies login credentials
-  - Data Storage
-      Stores authentication tokens locally on the device
-      Stores user account data securely on Spotify servers
-  - It requires internet, if there is no internet then the authentication process will not go through.
-  - If the network is slow or unavailable:
-      Login pages may not load
-      Verification may fail
-      User cannot access their account
+ - User Interface (UI): Login screen with options (Continue with email, phone, Google); step-by-step flows for credentials or account selection.
+ - Business Logic: Validates input, handles selected login method, creates secure session.
+ - Network / APIs: Communicates with Spotify auth servers and external providers (e.g., Google OAuth).
+ - Data Storage: Stores auth tokens locally; user data on Spotify servers.
+
+Requires Internet Connectivity?: Yes (for verification).
+If Network Slow or Unavailable: Login fails, pages may not load, user cannot access account (cached session may allow limited continued use if previously logged in).
 
 Feature 2: The search functionality   
 - Likely software components involved:  
