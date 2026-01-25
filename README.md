@@ -52,7 +52,7 @@ List 5–7 key features of Spotify (based on current app experience):
 Requires Internet Connectivity?: Yes (for verification).
 If Network Slow or Unavailable: Login fails, pages may not load, user cannot access account (cached session may allow limited continued use if previously logged in).
 
-Feature 2: The search functionality   
+**Feature 2: The search functionality.**   
 - Likely software components involved:  
   - User Interface (UI):
        Search icon (magnifying glass), Search screen with a text input field, Categories and suggestions (songs, artists, albums, playlists), Results list that updates as the user types.
@@ -69,7 +69,7 @@ Feature 2: The search functionality
  Does it require Internet?: Yes.
  If Network Slow/Unavailable: Results load slowly or fail; falls back to cached searches or shows "No internet" message; local library search may work partially.
 
-Feature 3: Offline Downloads
+**Feature 3: Offline Downloads.**
 - Likely software components involved:  
   - User Interface (UI):
      - Download toggle buttons on individual songs, albums, and playlists
@@ -94,12 +94,9 @@ Feature 3: Offline Downloads
      - All downloaded music files are kept encrypted on the device to enforce DRM protection
      - Saves associated metadata locally, including: song info (title, artist, album), album artwork, playlist structures, download progress, and expiration / license data
      - Uses a local database or structured files to manage offline content organization and quick access
-Requires Internet Connectivity?: Yes to download; No to play saved content.
-If Network Slow or Unavailable: New downloads pause/fail; already-downloaded content plays normally.
-  
-
-
-     Lyrics for new songs may not appear
+- Requires Internet Connectivity?: Yes to download; No to play saved content.
+- If Network Slow or Unavailable: New downloads pause/fail; already-downloaded content plays normally.
+  Lyrics for new songs may not appear
     Existing cached lyrics will display, but real-time sync may lag
     1. Search Bar/Input field with a test input box with a placeholder tex, a clear/X button to reset input.
     2. Search suggestions dropdown with a list suggested search terms as you type, recent searches section.
@@ -111,8 +108,7 @@ If Network Slow or Unavailable: New downloads pause/fail; already-downloaded con
     8. Search history panel with a list of recent searches, "clear all" button, and individual delete buttons per search term.
  
 
-
-Feature 4: Lyrics Display(Real-Time Synced) 
+**Feature 4: Lyrics Display(Real-Time Synced).** 
 - Likely software components involved:  
   - User Interface (UI): 
     - Scrollable lyrics panel/view (typically below the Now Playing screen or integrated over Canvas/album art on mobile)
@@ -139,7 +135,7 @@ Feature 4: Lyrics Display(Real-Time Synced)
 - Does it require Internet? Yes for initial fetch; cached lyrics may work offline.
 - If Network Slow/Unavailable: Lyrics fail to load or appear delayed/out-of-sync; app shows “Lyrics unavailable” or static text.
 
-Feature 5: Personalized Recommendations.
+**Feature 5: Personalized Recommendations.**
  - Likely software components involved:
    - User Interface:
      - Carousels and lists like "Discover Weekly."
@@ -150,10 +146,10 @@ Feature 5: Personalized Recommendations.
    - Data Storage:
      - Local storage for user preferences; cloud for aggregated data.
        
-Does it require Internet? Yes, for updating recommendations.
-If Network Slow/Unavailable: Stale recommendations from last sync; new listens aren't factored in until reconnected, potentially reducing personalization accuracy.
+- Does it require Internet? Yes, for updating recommendations.
+- If Network Slow/Unavailable: Stale recommendations from last sync; new listens aren't factored in until reconnected, potentially reducing personalization accuracy.
 
-Feature 6: Creation and management of playlists
+**Feature 6: Creation and management of playlists.**
 - Likely software components involved:  
     - User Interface (UI):
       - Screens to create, name, edit, and delete playlists;
@@ -173,12 +169,10 @@ Feature 6: Creation and management of playlists
     - Does it require Internet? Yes for creating, sharing, and collaborating on playlists.
          Partly for accessing already downloaded songs in a playlist offline.
       
-Requires Internet Connectivity?: Partial (local edits possible); full sync/collaboration needs internet.
-If Network Slow or Unavailable: Local changes save but don't sync; collaborative updates delayed; potential conflicts on reconnect. 
+- Requires Internet Connectivity?: Partial (local edits possible); full sync/collaboration needs internet.
+- If Network Slow or Unavailable: Local changes save but don't sync; collaborative updates delayed; potential conflicts on reconnect. 
 
-
-
-Feature 7: Streaming Playback & Controls
+**Feature 7: Streaming Playback & Controls.**
 - Likely software components involved:  
   - User Interface (UI): Now Playing screen with large album art, progress bar, play/pause, skip, shuffle, repeat, queue button, and lyrics toggle.
   - Business logic: Manages audio buffering, adaptive bitrate switching (based on network speed), handles playback interruptions (calls, notifications), queue logic.
