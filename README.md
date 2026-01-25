@@ -44,10 +44,10 @@ List 5–7 key features of Spotify (based on current app experience):
 
 **Feature 1: User authentication/The login and registration.**
  - Likely software components involved:
- - User Interface (UI): Login screen with options (Continue with email, phone, Google); step-by-step flows for credentials or account selection.
- - Business Logic: Validates input, handles selected login method, creates secure session.
- - Network / APIs: Communicates with Spotify auth servers and external providers (e.g., Google OAuth).
- - Data Storage: Stores auth tokens locally; user data on Spotify servers.
+  - User Interface (UI): Login screen with options (Continue with email, phone, Google); step-by-step flows for credentials or account selection.
+  - Business Logic: Validates input, handles selected login method, creates secure session.
+  - Network / APIs: Communicates with Spotify auth servers and external providers (e.g., Google OAuth).
+  - Data Storage: Stores auth tokens locally; user data on Spotify servers.
 
 Requires Internet Connectivity?: Yes (for verification).
 If Network Slow or Unavailable: Login fails, pages may not load, user cannot access account (cached session may allow limited continued use if previously logged in).
@@ -57,21 +57,17 @@ Feature 2: The search functionality
   - User Interface (UI):
        Search icon (magnifying glass), Search screen with a text input field, Categories and suggestions (songs, artists, albums, playlists), Results list that updates as the user types.
   - Business logic:
-       Interprets what the user types
-       Decides how to rank results (songs first, artists, playlists)
-       Filters and matches search terms with Spotify’s catalog
+      - Interprets what the user types
+      -  Decides how to rank results (songs first, artists, playlists)
+      -  Filters and matches search terms with Spotify’s catalog
   - Network / APIs:
-        Sends the search query to Spotify servers
-        Receives matching results (songs, artists, albums, playlists)
+      - Sends the search query to Spotify servers
+      - Receives matching results (songs, artists, albums, playlists)
   - Data storage: 
-        Temporary caching of recent searches
-        Search history saved to improve recommendations
-  - Does it require Internet?
-         Yes.
-  - If Network Slow/Unavailable:
-         Search results load slowly or not at all
-         Only previously cached results (if any) may appear
-         User cannot discover new music
+     - Temporary caching of recent searches
+     - Search history saved to improve recommendations
+ Does it require Internet?: Yes.
+ If Network Slow/Unavailable: Results load slowly or fail; falls back to cached searches or shows "No internet" message; local library search may work partially.
 
 Feature 3: Offline Downloads
 - Likely software components involved:  
