@@ -14,41 +14,35 @@ This README contains our group's complete submission for Assignment 1. We analyz
 
 **What problem does this app solve?**  
 1. Relation to Copyright, spotify provides legal, licensed access to music, reducing illegal copying. Artists and record labels are paid for streams, which protects copyright ownership. By making music easy and affordable to access, Spotify helps prevent copyright infringement.
-2. Centralizing Music Genres, before Spotify, music was spread across platforms like HowBizz for local Ugandan music, Tubidy for international pop and hip-hop, and Boomplay for African genres. Spotify brought all these genres into one platform, making music easier to find and enjoy in one place.
-3. 
+2. Access & Convenience Problem as before streaming services, people had to buy individual albums/songs or rely on radio. Music was spread across platforms like HowweBiz for local Ugandan music, Tubidy for international pop and hip-hop, and Boomplay for African genres. Spotify provides instant access to millions of songs of all genres in one place on-demand from any device without needing to purchase, download, or store music files locally. You can listen anywhere, anytime.
+3. Artist Distribution & Monetisation: For artists, getting music to listeners traditionally required record labels and physical distribution. Spotify provides a direct distribution channel where independent artists can reach global audiences and earn royalties based on streams.
+
+Basically, Spotify democratised music access while solving the friction between discovery, cost, and convenience.
+
 **Who are its primary users?
-1. Music enthusiasts within a specific age range(most preferably youth).
-2. Music artists and producers looking to sell their music.
+1. Music enthusiasts, casual listeners, podcast listeners, and fitness users that are young adults (18-34 years). This is Spotify's largest demographic segment. Millenials and Gen Z are the most active users, comfortable with streaming technology and digital music consumption.
+2. Content creators, Artists and Podcasters. Musicians, bands, podcaster, and audiobook creators who upload and distribute content through Spotify. They use Spotify for Artists/Podcasters dashboards to track analytics and earnings.
 
 
 ## 2. Core Features
 
 List 5–7 key features of Spotify (based on current app experience):
 
-1. User authentication/The login and registration.
-2. The search button: There is no way to get quick access to most of the stored playlists and albums minus using the search button.
+1. User authentication and Profile System/The login or signup page: There are multiple options like Email, Google, Facebook and Apple. There is also profile managemet, and account settings where users can manage their subscription tier (Free, Premium, Family, Student plans).
+2. The search functionality: A powerful search bar that lets you find songs, artists, albums, playlists, podcasts, and audiobooks. It includes filters and a search history to quickly access previous queries.
 3. Offline Downloads: Permits saving content for offline use, emphasizing data storage strategies for reliability.
 4. Lyrics Display(Real-Time Synced): Shows timed lyrics during playback, a feature that ties UI with timing algorithms.
 5. Personalized Recommendations: Made for You sections like Daily Mixes, Discover Weekly, and Release Radar based on listening history.
 6. Creation and management of playlists: Create, edit, share, and collaborate on playlists; add/remove tracks.
-7.   
+7. Streaming Playback & Controls 
+4. Music Player Controls: Full-featured playback interface with play/pause, skip, shuffle, repeat, volume control, queue management, lyrics display, and casting to other devices (Spotify Connect) as well the share button.
+5. Personalized Home Feed: Dynamic homepage that displays recommended playlists like Daily Mixes, Discover Weekly, and Release Radar based on listening history, new releases, and curated sections and the time of day as well.
+6. Playlist Creation & Management: Provides the ability to create, edit, and organise custom playlists, add songs to library, collaborate on playlists with friends, reorder tracks with drag-and-drop, and download for offline listening Premium).
+7. Payment & Subscription Management: In -app payment gateway for upgrading to Premium, managing billing information, changing subscription plans, and accessing payment history. Multiple payment methods supported (Credit card, mobile carrier billing)
+8. Library & Collection Organisation: "Your Library" section where you can organise saved songs, albums, artists, podcasts, and audiobooks into folders and custom categories for easy access and management 
 
 
 ## Part B: Thinking Behind the Scenes
-
-For each of the features listed above, discuss:
-
-- Likely software components involved:  
-  - User Interface (UI)  
-  - Business logic  
-  - Network / APIs  
-  - Data storage  
-
-- Whether the feature requires internet connectivity
-- 1. It rquires for live streaming
-- What might happen if the network is slow or unavailable
-- 1. You will only be able to access the downloaded content
-  2. some features like the colloborative creation of playlists and messaging services wo't be available
 
 **Feature 1: User authentication/The login and registration.**
  - Likely software components involved:
@@ -79,7 +73,7 @@ For each of the features listed above, discuss:
       Verification may fail
       User cannot access their account
 
-Feature 2: The search button   
+Feature 2: The search functionality   
 - Likely software components involved:  
   - User Interface (UI):
        Search icon (magnifying glass), Search screen with a text input field, Categories and suggestions (songs, artists, albums, playlists), Results list that updates as the user types.
@@ -134,6 +128,40 @@ Feature 4: Lyrics Display(Real-Time Synced)
 - If network is slow/unavailable:
     Lyrics for new songs may not appear
     Existing cached lyrics will display, but real-time sync may lag
+    1. Search Bar/Input field with a test input box with a placeholder tex, a clear/X button to reset input.
+    2. Search suggestions dropdown with a list suggested search terms as you type, recent searches section.
+    3. Search button/icon with a clickable search icon to trigger search and active/inactive states.
+    4. Category Filter Tabs with tab buttons "All", "Songs", "Artists", "Albums", "Playlists", "Podcasts", "Profiles"
+    5. Search Results Container with a grid or list ayout for results and a scrollable area.
+    6. Results Cards/List items with thumbnail/album art image, title text, subtitle/artist name text, duration/ metadata text, play button overlay, three-dot menu (for options), and hover effects.
+    7. Empty State Display with "No results found" message
+    8. Search history panel with a list of recent searches, "clear all" button, and individual delete buttons per search term.
+  - Business logic: 
+  - Network / APIs: 
+  - Data storage: 
+
+- Does it require Internet? Yes (for full results and suggestions).
+- If Network Slow/Unavailable: Results load slowly or fail to appear; app falls back to cached searches or shows “No internet connection” message. Local library search may still work partially.
+
+Feature 3: Offline Downloads
+- Likely software components involved:  
+  - User Interface (UI): Download toggle buttons on songs/albums/playlists, progress indicators, “Downloads” section in Your Library.
+  - Business logic: Manages download queue, handles DRM encryption/decryption, checks download expiration, prioritizes based on user preferences. 
+  - Network / APIs: Initial API calls to authorize and fetch content from Spotify’s content delivery network (CDN). 
+  - Data storage: Encrypted audio files stored in app’s secure local storage (device file system).
+
+- Does it require Internet? Yes to download; No to play downloaded content.
+- If Network Slow/Unavailable: Downloads pause or fail; already downloaded content remains playable without issues.
+
+Feature 4: Lyrics Display(Real-Time Synced) 
+- Likely software components involved:  
+  - User Interface (UI): Scrollable lyrics panel below the player, current line highlighted and auto-scrolling, “Lyrics not available” fallback.
+  - Business logic: Syncs lyrics timestamps with current playback position, handles language selection, karaoke-style highlighting.
+  - Network / APIs: Fetches timed lyrics data from Spotify’s lyrics service or third-party partners (e.g., Musixmatch).
+  - Data storage: Temporary cache of recently viewed lyrics on device.
+
+- Does it require Internet? Yes for initial fetch; cached lyrics may work offline.
+- If Network Slow/Unavailable: Lyrics fail to load or appear delayed/out-of-sync; app shows “Lyrics unavailable” or static text.
 
 Feature 5: Personalized Recommendations.
  - Likely software components involved:
@@ -158,14 +186,23 @@ Feature 6: Creation and management of playlists
          Collaborative playlists won’t update in real time
          User can still play downloaded songs in existing playlists, but any changes won’t sync until reconnected
 Feature 7: 
-- Likely software components involved:  
-  - User Interface (UI): 
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
+  - User Interface (UI): Playlist creation screen, “Add songs” search, drag-and-drop reordering, collaborative indicators and share button
+  - Business logic: Adds/removes tracks, handles reordering, manages collaborative editing conflicts, updates metadata.
+  - Network / APIs: Syncs changes to Spotify servers, uses real-time collaboration APIs (WebSockets/polling) for shared playlists.
+  - Data storage: Local temporary storage for unsynced changes; master data on Spotify cloud servers.
 
-- Does it require Internet?
-- If Network Slow/Unavailable: 
+- Does it require Internet? Partial (local edits possible); full sync and collaboration require internet.
+- If Network Slow/Unavailable: Changes saved locally but not synced; collaborative edits by others won’t appear; potential merge conflicts on reconnect.
+
+Feature 7: Streaming Playback & Controls
+- Likely software components involved:  
+  - User Interface (UI): Now Playing screen with large album art, progress bar, play/pause, skip, shuffle, repeat, queue button, and lyrics toggle.
+  - Business logic: Manages audio buffering, adaptive bitrate switching (based on network speed), handles playback interruptions (calls, notifications), queue logic.
+  - Network / APIs: Streams audio chunks from Spotify’s CDN using adaptive streaming protocols (HLS/DASH), fetches metadata updates.
+  - Data storage: Temporary in-memory buffer and small local cache for preloading.
+
+- Does it require Internet? Yes for streaming (unless content is downloaded).
+- If Network Slow/Unavailable: Buffering occurs frequently, audio quality drops automatically, playback pauses or stops. Downloaded songs continue playing.
 
 
 
