@@ -72,36 +72,34 @@ Feature 2: The search functionality
 Feature 3: Offline Downloads
 - Likely software components involved:  
   - User Interface (UI):
-      Download button on songs, albums, or playlists
-      Download progress indicator
-      Offline library screen to access downloaded content
+     - Download toggle buttons on individual songs, albums, and playlists
+     - Progress indicators (per track / batch / overall download progress)
+     - Dedicated “Downloads” / Offline Library section in Your Library to browse and access downloaded content
   - Business logic:
-       Checks if the user has permission (Premium subscription)
-       Manages what gets downloaded and storage space
-       Handles play requests from offline content
+     - Checks Premium subscription / download permission before starting
+     - Manages download queue (ordering, pausing, resuming, canceling)
+     - Prioritizes downloads based on user preferences (e.g., Wi-Fi only, data saver mode)
+     - Handles storage management (available space checks, automatic cleanup of oldest/lowest-priority items if needed)
+     - Manages DRM encryption/decryption and license validation
+     - Checks download expiration / license renewal requirements
+     - Handles offline playback requests (locates local files, verifies DRM, plays content)
   - Network / APIs:
-       Downloads music from Spotify servers when connected
-       Updates download status and syncs playlists with the cloud
+     - Performs initial API calls to authorize the user (Premium subscription check) and obtain download permissions / licenses
+     - Fetches encrypted audio content directly from Spotify’s content delivery network (CDN) when the device is online
+     - Downloads music files (in encrypted chunks / segments) from Spotify servers / CDN during active internet connection
+     - Syncs download status, playlist changes, and metadata updates with the cloud
+     - Periodically communicates with servers to refresh DRM licenses, check expiration (e.g., requiring online reconnection every ~30 days), and validate content
   - Data storage:
-       Stores music files securely on the device
-       Saves metadata (song info, playlists, progress) locally
-  - Does it require Internet?
-       Yes to download new songs
-       No to play songs already downloaded
-  - If Network Slow/Unavailable:
-       New downloads may fail or pause
-       Only already-downloaded songs are playable
-       Features like streaming, search, or updating playlists are limited
+    -  Encrypted audio files stored securely in the app’s local secure storage area (device file system / app sandbox)
+     - All downloaded music files are kept encrypted on the device to enforce DRM protection
+     - Saves associated metadata locally, including: song info (title, artist, album), album artwork, playlist structures, download progress, and expiration / license data
+     - Uses a local database or structured files to manage offline content organization and quick access
+Requires Internet Connectivity?: Yes to download; No to play saved content.
+If Network Slow or Unavailable: New downloads pause/fail; already-downloaded content plays normally.
+  
 
-Feature 4: Lyrics Display(Real-Time Synced) 
-- UI: Lyrics appear line by line as the song plays, often highlighted in sync with music; scrollable lyric view for longer songs.
-- Business Logic: Matches song playback position to the correct lyric line; handles timing, scrolling, and any user interactions like pause or seek.
-- Network/APIs: Retrieves lyrics from Spotify’s servers or licensed lyric providers; may update lyrics in real time for new songs.
-- Data Storage: Caches recently viewed lyrics locally for faster access; stores timing data and song-lyrics mapping for offline playback.
-- Does it require internet?
-    Yes, for new songs or lyrics not yet cached; no for already downloaded songs with cached lyrics.
-- If network is slow/unavailable:
-    Lyrics for new songs may not appear
+
+     Lyrics for new songs may not appear
     Existing cached lyrics will display, but real-time sync may lag
     1. Search Bar/Input field with a test input box with a placeholder tex, a clear/X button to reset input.
     2. Search suggestions dropdown with a list suggested search terms as you type, recent searches section.
@@ -111,63 +109,74 @@ Feature 4: Lyrics Display(Real-Time Synced)
     6. Results Cards/List items with thumbnail/album art image, title text, subtitle/artist name text, duration/ metadata text, play button overlay, three-dot menu (for options), and hover effects.
     7. Empty State Display with "No results found" message
     8. Search history panel with a list of recent searches, "clear all" button, and individual delete buttons per search term.
-  - Business logic: 
-  - Network / APIs: 
-  - Data storage: 
+ 
 
-- Does it require Internet? Yes (for full results and suggestions).
-- If Network Slow/Unavailable: Results load slowly or fail to appear; app falls back to cached searches or shows “No internet connection” message. Local library search may still work partially.
-
-Feature 3: Offline Downloads
-- Likely software components involved:  
-  - User Interface (UI): Download toggle buttons on songs/albums/playlists, progress indicators, “Downloads” section in Your Library.
-  - Business logic: Manages download queue, handles DRM encryption/decryption, checks download expiration, prioritizes based on user preferences. 
-  - Network / APIs: Initial API calls to authorize and fetch content from Spotify’s content delivery network (CDN). 
-  - Data storage: Encrypted audio files stored in app’s secure local storage (device file system).
-
-- Does it require Internet? Yes to download; No to play downloaded content.
-- If Network Slow/Unavailable: Downloads pause or fail; already downloaded content remains playable without issues.
 
 Feature 4: Lyrics Display(Real-Time Synced) 
 - Likely software components involved:  
-  - User Interface (UI): Scrollable lyrics panel below the player, current line highlighted and auto-scrolling, “Lyrics not available” fallback.
-  - Business logic: Syncs lyrics timestamps with current playback position, handles language selection, karaoke-style highlighting.
-  - Network / APIs: Fetches timed lyrics data from Spotify’s lyrics service or third-party partners (e.g., Musixmatch).
-  - Data storage: Temporary cache of recently viewed lyrics on device.
+  - User Interface (UI): 
+    - Scrollable lyrics panel/view (typically below the Now Playing screen or integrated over Canvas/album art on mobile)
+    - Real-time line-by-line highlighting and auto-scrolling synced to playback position (karaoke-style)
+    - Current lyric line prominently highlighted (e.g., bold/color change)
+    - Fallback messaging: “Lyrics not available,” “Lyrics unavailable,” or static/plain text display when timed lyrics fail to load
+    - Support for language selection (where multiple translations exist) 
+  - Business logic: 
+    - Continuously matches current song playback position (including seek, pause, resume, skip) to the corresponding lyric timestamp
+    - Handles real-time syncing: updates highlighted line, auto-scrolls to keep current line in view
+    - Manages edge cases: crossfade effects, speed adjustments, or playback interruptions that could desync lyrics
+    - Supports user interactions: tap to jump to a line (seek playback), manual scroll override with auto-resume
+    - Determines fallback: switches to plain (non-timed) lyrics or error state if timed data is missing/unavailable
+  - Network / APIs: 
+    - Fetches timed/synced lyrics data from Spotify’s lyrics service or licensed third-party providers (primarily Musixmatch) via API calls
+    - Retrieves lyrics on song start/change, or when user opens the lyrics view
+    - Supports real-time updates for newly added/edited lyrics (e.g., artist-submitted via Musixmatch)
+    - May include metadata like available languages or translation options
+  - Data storage: 
+    - Temporary/local cache of recently viewed lyrics (including timed timestamp data) stored on device for faster reload and partial offline support
+    - Caches song-lyrics mapping and timing info to enable quicker access on repeat plays
+    - Cache is temporary/not persistent like offline music downloads (may clear on app restart, cache limits, or after time)
 
 - Does it require Internet? Yes for initial fetch; cached lyrics may work offline.
 - If Network Slow/Unavailable: Lyrics fail to load or appear delayed/out-of-sync; app shows “Lyrics unavailable” or static text.
 
 Feature 5: Personalized Recommendations.
  - Likely software components involved:
-   - UI: Carousels and lists like "Discover Weekly."
-   - Business Logic: Machine learning models to analyze listening patterns and suggest content.
-   - Network/APIs: APIs to send user data and receive recommendation responses from servers.
-   - Data Storage: Local storage for user preferences; cloud for aggregated data.
-
-- Does it require Internet? Yes, for updating recommendations.
-- If Network Slow/Unavailable: Stale recommendations from last sync; new listens aren't factored in until reconnected, potentially reducing personalization accuracy.
+   - User Interface:
+     - Carousels and lists like "Discover Weekly."
+   - Business Logic:
+     - Machine learning models to analyze listening patterns and suggest content.
+   - Network/APIs:
+     - APIs to send user data and receive recommendation responses from servers.
+   - Data Storage:
+     - Local storage for user preferences; cloud for aggregated data.
+       
+Does it require Internet? Yes, for updating recommendations.
+If Network Slow/Unavailable: Stale recommendations from last sync; new listens aren't factored in until reconnected, potentially reducing personalization accuracy.
 
 Feature 6: Creation and management of playlists
 - Likely software components involved:  
-    - User Interface (UI): Screens to create, name, edit, and delete playlists; drag-and-drop or add/remove tracks; share and collaborative playlist options.
-    - Business Logic: Handles playlist creation, editing, and deletion; manages permissions for collaborative playlists; enforces limits (number of songs, playlist size).
-    - Network / APIs: Syncs playlist changes to Spotify servers; fetches updates from shared/collaborative playlists; communicates with friends’ accounts for collaboration.
-    - Data Storage: Stores playlist structure locally for offline access; syncs metadata (song order, collaborators, playlist info) with cloud storage.
+    - User Interface (UI):
+      - Screens to create, name, edit, and delete playlists;
+      - drag-and-drop or add/remove tracks;
+      - share and collaborative playlist options.
+    - Business Logic:
+      - Handles playlist creation, editing, and deletion.
+      - Manages permissions for collaborative playlists
+      - Enforces limits (number of songs, playlist size).
+    - Network / APIs:
+      - Syncs playlist changes to Spotify servers
+      - Fetches updates from shared/collaborative playlists
+      - Communicates with friends’ accounts for collaboration.
+    - Data Storage:
+      - Stores playlist structure locally for offline access
+      - Syncs metadata (song order, collaborators, playlist info) with cloud storage.
     - Does it require Internet? Yes for creating, sharing, and collaborating on playlists.
          Partly for accessing already downloaded songs in a playlist offline.
-    - If Network Slow/Unavailable:
-         Cannot create or share new playlists
-         Collaborative playlists won’t update in real time
-         User can still play downloaded songs in existing playlists, but any changes won’t sync until reconnected
-Feature 7: 
-  - User Interface (UI): Playlist creation screen, “Add songs” search, drag-and-drop reordering, collaborative indicators and share button
-  - Business logic: Adds/removes tracks, handles reordering, manages collaborative editing conflicts, updates metadata.
-  - Network / APIs: Syncs changes to Spotify servers, uses real-time collaboration APIs (WebSockets/polling) for shared playlists.
-  - Data storage: Local temporary storage for unsynced changes; master data on Spotify cloud servers.
+      
+Requires Internet Connectivity?: Partial (local edits possible); full sync/collaboration needs internet.
+If Network Slow or Unavailable: Local changes save but don't sync; collaborative updates delayed; potential conflicts on reconnect. 
 
-- Does it require Internet? Partial (local edits possible); full sync and collaboration require internet.
-- If Network Slow/Unavailable: Changes saved locally but not synced; collaborative edits by others won’t appear; potential merge conflicts on reconnect.
+
 
 Feature 7: Streaming Playback & Controls
 - Likely software components involved:  
