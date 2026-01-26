@@ -5,11 +5,11 @@
 **Assignment Type:** Mobile application analysis 
 
 **Group Members:** 
-1.Rebecca Alinda               B20726   S23B23/056
-2.Anna Akumu                   B24782   S23B23/094
-3.Namaganda Wakabi Precious    B24745   S23B23/092
-4.Odongkara Oscar              B24774   S23B23/085
-5.Joseph Mukama                B24267   S23B23/036
+1. Rebecca Alinda               B20726   S23B23/056
+2. Anna Akumu                   B24782   S23B23/094
+3. Namaganda Wakabi Precious    B24745   S23B23/092
+4. Odongkara Oscar              B24774   S23B23/085
+5. Joseph Mukama                B24267   S23B23/036
 
 **Selected App:** Spotify  
 
