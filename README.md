@@ -24,7 +24,7 @@ This README contains our group's complete submission for Assignment 1. We analyz
 
 Basically, Spotify democratised music access while solving the friction between discovery, cost, and convenience.
 
-**Who are its primary users?
+**Who are its primary users?**
 1. Music enthusiasts, casual listeners, podcast listeners, and fitness users that are young adults (18-34 years). This is Spotify's largest demographic segment. Millenials and Gen Z are the most active users, comfortable with streaming technology and digital music consumption.
 2. Content creators, Artists and Podcasters. Musicians, bands, podcaster, and audiobook creators who upload and distribute content through Spotify. They use Spotify for Artists/Podcasters dashboards to track analytics and earnings.
 
@@ -248,21 +248,29 @@ Identify **at least 5** engineering challenges in maintaining/improving Spotify.
 
 ## Part E: Group Reflection
 
+As a group, we reflected together on what this analysis taught us about real-world software like Spotify.
+
 1. **What surprised your group most about the complexity behind this app?**  
-   1. collaborative playlist. this involves creation of music playlist with friends and playing
-   2. 
+   - **Collaborative playlists** really shocked us the idea that multiple people can create, edit, add songs, and even play together in real time (like in Jam sessions) seems simple as users, but behind it there is complex engineering. It involves real-time synchronization across devices, handling conflicts when two friends add the same song or remove tracks at the same time, managing permissions, and making sure everyone sees the same updated list without delays. We never imagined how much networking, conflict resolution, and backend logic is needed just for friends to share a playlist smoothly.  
+  - The massive scale of personalization surprised us too features like Discover Weekly and Daily Mixes are built on analyzing billions of listening sessions worldwide using machine learning, yet it feels instant and personal on our phones.  
+- We were also surprised by how tightly everything connects changing one small thing (like search ranking) can affect recommendations, playback, and even offline downloads, showing how interconnected large systems really are.
 
-3. **Why is writing “working code” not enough for software systems at this scale?**  
-   1. Millions of users expect near-zero downtime, fast responses, and consistent experience; small bugs or inefficiencies can affect huge numbers of people, damage reputation, or lose revenue.
-   2. At Spotify's massive scale, code must be fast, secure, easy to maintain and test, and resilient to network issues, device differences, and traffic spikes simply working on one phone
-doesn't guarantee it will perform reliably for millions of users worldwide.
+2. **Why is writing “working code” not enough for software systems at this scale?**  
+   - Millions of users expect near-zero downtime, fast responses, and a consistent experience across countries and devices. A small bug, slow loading, or crash affects huge numbers of people, damages reputation, loses subscribers, or even reduces artist royalties so code must be reliable under real pressure, not just “work” on one phone.  
+  - At Spotify's massive scale, code must be fast, secure, easy to maintain and test, and resilient to network issues, device differences (especially low-end phones common in Uganda), traffic spikes (e.g., new album drops), and constant changes from new features. Simply writing working code on a single machine doesn't guarantee it will perform reliably for millions of users worldwide or survive years of updates without becoming a mess (technical debt).  
+- Large systems are built and changed by teams over many years so the code needs to be readable, modular, well-tested, and designed for evolution. “Working” today is not enough if it becomes impossible to improve safely tomorrow.
 
-5. **What did you learn about teamwork from this exercise?**  
-   1. Easier to tackle about a number ideas
-   2. finishing work in time in that every member will deliver work in time since the aspect given to them is a must do for them.
-   3. 
-
+3. **What did you learn about teamwork from this exercise?**  
+ - It became much easier to tackle a large number of ideas when we divided roles one person focused on features, another on challenges, etc. — because everyone brought different perspectives and we covered more ground without getting stuck.  
+   - Assigning clear responsibilities helped us finish work on time every member knew their part was a must-do, so people delivered their sections promptly instead of waiting until the last minute. This made the whole document stronger and less stressful.  
+   - We learned that good teamwork needs open discussion and compromise sometimes we disagreed on how complex something was (e.g., collaborative playlists), but talking it through and combining our thoughts gave us better, more complete answers than any one person could write alone. Using shared tools (like Google Docs before GitHub) also helped us see everyone's edits in real time.
+  
+   
 ## Group Contributions (Required)
-- **Member 5 Name**: [e.g., Handled reflections in Part E and ensured clear formatting]
+- **Rebecca Alinda**: Handled reflections in Part E and ensured clear formatting
+- **Anna Akumu**: Handled reflections in Part E and ensured clear formatting
+- **Namaganda Precious Wakaabi**: Handled reflections in Part E and ensured clear formatting
+- **Odongkara Oscar**: Handled reflections in Part E and ensured clear formatting
+- **Mukama Joseph**: Handled reflections in Part E and ensured clear formatting
 
 All members contributed meaningfully through brainstorming sessions and reviews.
