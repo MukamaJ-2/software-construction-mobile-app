@@ -99,7 +99,8 @@ Feature 2: The search functionality
   - Business logic:
     1. Search Scope Determination which determines what to search based on active filter that is; "All" with search songs, artists, albums, playlists, podcasts, profiles and Specific tab to search only that content type
     2. Check user's subscription tier which are the free users and includes ads in results, limit some features and the Premium users which highlights the full catalog access and the no ad results.
-  - Network / APIs: 
+  - Network / APIs:
+    Main Search API, Search Suggestions API, Trending Searches API an the network flow is Client → API Gateway → Search Service → Response
   - Data storage: 
 
 - Does it require Internet?
