@@ -267,7 +267,7 @@ As a group, we reflected together on what this analysis taught us about real-wor
   
    
 ## Group Contributions (Required)
-- **Rebecca Alinda**: Handled reflections in Part E and ensured clear formatting
+- **Rebecca Alinda**: Handled reflections in Part B as the systems thinker as well as all other parts.
 - **Anna Akumu**: Handled reflections in Part E and ensured clear formatting
 - **Namaganda Precious Wakaabi**: Handled reflections in Part E and ensured clear formatting
 - **Odongkara Oscar**: Handled reflections in Part E and ensured clear formatting
