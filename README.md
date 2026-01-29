@@ -264,11 +264,10 @@ Identify **at least 5** engineering challenges in maintaining/improving Spotify.
 ## Part E: Group Reflection
 
 As a group, we reflected together on what this analysis taught us about real-world software like Spotify.
-
 1. **What surprised your group most about the complexity behind this app?**  
- - **Collaborative playlists** really shocked us the idea that multiple people can create, edit, add songs, and even play together in real time (like in Jam sessions) seems simple as users, but behind it there is complex engineering. It involves real-time synchronization across devices, handling conflicts when two friends add the same song or remove tracks at the same time, managing permissions, and making sure everyone sees the same updated list without delays. We never imagined how much networking, conflict resolution, and backend logic is needed just for friends to share a playlist smoothly.  
-- The massive scale of personalization surprised us too features like Discover Weekly and Daily Mixes are built on analyzing billions of listening sessions worldwide using machine learning, yet it feels instant and personal on our phones.  
-- We were also surprised by how tightly everything connects changing one small thing (like search ranking) can affect recommendations, playback, and even offline downloads, showing how interconnected large systems really are.
+   - **Collaborative playlists** really shocked us. What looks simple — friends creating, editing, adding songs, and even playing together in real time (Jam sessions) — actually requires very complex engineering: real-time synchronization across devices, conflict handling (e.g., two people changing the same track at once), permission management, and ensuring everyone sees the same list instantly. We never imagined so much networking, backend logic, and conflict resolution was needed just for sharing music smoothly.  
+   - The **Live Events feature** surprised us even more deeply. Artists can promote and advertise their concerts/shows directly in the app (events appear in personalized feeds, artist profiles, and recommendations based on listening habits). Fans can discover upcoming gigs, and many events include ticket purchase links right inside Spotify. What blew our minds is how this extends into the real world: once we see a concert we like (e.g., a local artist at Lugogo or Sheraton in Kampala), we immediately need directions — and Spotify quietly supports this by integrating with Google Maps for navigation and guidance to the venue. Behind this must be partnerships with ticketing platforms, event databases, location services, and API connections to maps — all so fans can go from discovering music → buying a ticket → actually getting to the event. We didn’t expect the app to bridge digital listening and real-life experiences so seamlessly.  
+   - We were also surprised by how tightly everything connects — changing one small thing (like search ranking or event data) can ripple to recommendations, playback, offline mode, and even how fans find and attend live shows, showing how interconnected large systems really are.
 
 2. **Why is writing “working code” not enough for software systems at this scale?**  
  - Millions of users expect near-zero downtime, fast responses, and a consistent experience across countries and devices. A small bug, slow loading, or crash affects huge numbers of people, damages reputation, loses subscribers, or even reduces artist royalties so code must be reliable under real pressure, not just “work” on one phone.  
@@ -289,3 +288,15 @@ As a group, we reflected together on what this analysis taught us about real-wor
 - **Mukama Joseph**: cordinator and head of documentation
 
 All members contributed meaningfully through brainstorming sessions and reviews.
+- **Rebecca Alinda** (Coordinator & Systems Thinker)  
+  Coordinated the group, kept us on schedule, led backend/architecture reasoning in Part B, and contributed to reflections.
+- **Anna Akumu** (App Analyst)  
+  Led feature identification and descriptions in Part A, wrote key parts of Part B, and added daily-use examples.
+- **Namaganda Wakabi Precious** (Risk & Change Analyst)  
+  Analyzed the change scenario in Part C, explained challenges in Part D, and ensured clear formatting/structure.
+- **Odongkara Oscar** (Documentation Support)  
+  Focused on Part D challenges, reviewed clarity/flow, assisted with formatting, and helped with final proofread.
+- **Mukama Joseph** (Documentation Lead & Reflection Lead)  
+  Led Part E (Group Reflection), compiled and formatted the full README.md, ensured proper Markdown, and did final integration/review.
+
+All members contributed meaningfully through brainstorming sessions and reviews in regard to all parts of the assignmnet.
