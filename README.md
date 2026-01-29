@@ -60,6 +60,21 @@ If Network Slow or Unavailable: Login fails, pages may not load, user cannot acc
 **Feature 2: The search functionality.**   
 - Likely software components involved:  
   - User Interface (UI):
+    1. Search Bar/Input field with a test input box with a placeholder tex, a clear/X button to reset input.
+    2. Search suggestions dropdown with a list suggested search terms as you type, recent searches section.
+    3. Search button/icon with a clickable search icon to trigger search and active/inactive states.
+    4. Category Filter Tabs with tab buttons "All", "Songs", "Artists", "Albums", "Playlists", "Podcasts", "Profiles"
+    5. Search Results Container with a grid or list ayout for results and a scrollable area.
+    6. Results Cards/List items with thumbnail/album art image, title text, subtitle/artist name text, duration/ metadata text, play button overlay, three-dot menu (for options), and hover effects.
+    7. Empty State Display with "No results found" message
+    8. Search history panel with a list of recent searches, "clear all" button, and individual delete buttons per search term.
+    9. Infinite Scroll Indicator with a oading spinner at bottom of results and "load more" button (alternative to infinite scroll)
+  
+  - Business logic:
+    1. Search Scope Determination which determines what to search based on active filter that is; "All" with search songs, artists, albums, playlists, podcasts, profiles and Specific tab to search only that content type
+    2. Check user's subscription tier which are the free users and includes ads in results, limit some features and the Premium users which highlights the full catalog access and the no ad results.
+  - Network / APIs:
+    Main Search API, Search Suggestions API, Trending Searches API an the network flow is Client → API Gateway → Search Service → Response
        Search icon (magnifying glass), Search screen with a text input field, Categories and suggestions (songs, artists, albums, playlists), Results list that updates as the user types.
   - Business logic:
       - Interprets what the user types
@@ -266,6 +281,13 @@ As a group, we reflected together on what this analysis taught us about real-wor
   
    
 ## Group Contributions (Required)
+- **Rebecca Alinda**: Handled reflections in Part B as the systems thinker as well as all other parts.
+- **Anna Akumu**: Handled reflections in Part E and ensured clear formatting
+- **Namaganda Precious Wakabi**: Handled reflections in Part E and ensured clear formatting
+- **Odongkara Oscar**: Handled reflections in Part E and ensured clear formatting
+- **Mukama Joseph**: cordinator and head of documentation
+
+All members contributed meaningfully through brainstorming sessions and reviews.
 - **Rebecca Alinda** (Coordinator & Systems Thinker)  
   Coordinated the group, kept us on schedule, led backend/architecture reasoning in Part B, and contributed to reflections.
 - **Anna Akumu** (App Analyst)  
